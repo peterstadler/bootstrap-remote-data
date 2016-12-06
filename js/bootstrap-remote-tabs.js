@@ -225,6 +225,7 @@ var RemoteTabs = function (settings) {
                         dataContainer.unmask();
                     }
                     if (data) {
+                        data = $(data);
                         if (typeof window[callbackFn] == 'function') {
                             window[callbackFn].call(null, data, trigger, dataContainer, customData);
                         }
