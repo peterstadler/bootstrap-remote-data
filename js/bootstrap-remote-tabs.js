@@ -50,9 +50,9 @@ $(function () {
         }
     }
 
-    firstTab = $('[data-toggle=tab]:first, [data-toggle=collapse]:first');
+    firstTab = $('[data-toggle=tab]:first');
 
-    if (!customSettings.loadFirstTab && !hasTab) {
+    if (customSettings.loadFirstTab && !hasTab) {
         firstTab.click();
     }
 });
@@ -75,7 +75,7 @@ var RemoteTabs = function (settings) {
             me.hasLoadingMask = !!hasLoadingMask;
 
             // enable all remote data tabs
-            $('[data-toggle=tab], [data-toggle=collapse]').each(function (k, obj) {
+            $('[data-toggle=tab]').each(function (k, obj) {
                 var bsObj = $(obj),
                     bsDiv,
                     bsData,
