@@ -2,7 +2,7 @@ var $ = jQuery;
 /*!
  *
  * Bootstrap remote data tabs plugin
- * Version 1.2.0
+ * Version 1.2.2
  *
  * Author: Stephen Hoogendijk (TheCodeAssassin)
  *
@@ -35,22 +35,22 @@ $(function () {
     if (hash) {
 
         var realHash = hash.split('bs-tab-')[1],
-            hasTab = $('[data-toggle=tab][href*=' + realHash + ']');
+            hasTab = $('[data-toggle="tab"][href*="' + realHash + '"]');
 
         if (hasTab) {
             hasTab.click();
         }
 
-        var hasAccordion = $('[data-toggle=collapse][href=' + hash + ']');
+        var hasAccordion = $('[data-toggle="collapse"][href="' + hash + '"]');
         if (hasAccordion) {
             // for some reason we cannot execute the 'show' event for an accordion properly, so here's a workaround
-            if (hasAccordion[0] != $('[data-toggle=collapse]:first')[0]) {
+            if (hasAccordion[0] != $('[data-toggle="collapse"]:first')[0]) {
                 hasAccordion.click();
             }
         }
     }
 
-    firstTab = $('[data-toggle=tab]:first');
+    firstTab = $('[data-toggle="tab"]:first');
 
     if (customSettings.loadFirstTab && !hasTab) {
         firstTab.click();
@@ -75,7 +75,7 @@ var RemoteTabs = function (settings) {
             me.hasLoadingMask = !!hasLoadingMask;
 
             // enable all remote data tabs
-            $('[data-toggle=tab]').each(function (k, obj) {
+            $('[data-toggle="tab"]').each(function (k, obj) {
                 var bsObj = $(obj),
                     bsDiv,
                     bsData,
